@@ -1,6 +1,11 @@
 var DoLoop = require('./index.js');
 
-DoLoop.this();
+var doloop = DoLoop()
+  // .changeDirectory('test')
+  .do(function(files){
+   console.log(files);
+  });
 
 
-console.log(doloop.prototype);
+
+console.log(doloop);
