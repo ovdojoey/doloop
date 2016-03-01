@@ -96,8 +96,8 @@ a raw buffer of the file contents (unless modified, for example using `readEncod
       concat += data;
     });
 
-Here we are looping through all the files in `__dirname/scripts` and storing the
-data from each file in `concat`.   At first glance you may think you could use
+Here we are looping through all the files in `scripts/` and adding the
+data from each file to `concat`.   At first glance you may think you could use
 `concat` outside of the loop, however because this is working asynchronously `concat`
 will be an empty string.   To use data created or modified in the loop use the `build()`
 method which is only fired after the preceding loop has finished.
