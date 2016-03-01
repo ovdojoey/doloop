@@ -20,19 +20,36 @@ Looping is really easy, take a look at this basic example:
        console.log( filename );
      });
 
-Here we are simply looping over all the files in the current directory and we are using
-console.log to print the name of each file.  You can choose to do certain things to files if they match
-a filename:
+In the above example we are simply looping over all the files in the current directory and using
+console.log to print the name of each file.  
+
+You can do anything you want within the loop.  
+For instance, you can choose to do certain things to files if they match a filename:
 
     var fs = require('fs');
     var DoLoop = require('doloop');
-    var version = '0.11';
+    var cacheBuste = '12_22_16_';
     DoLoop()
     .loop( function( filename, data ) {
       if ( filename === "main.js" ) {
-        fs.rename(filename, filename + "?v=" + version );
+        // do something with the file: `this._directory + "/" + filename`
       }
     });
+
+Or maybe you want to use Handlebars to automate your cache busting (you'll need these
+packages installed to use them).
+
+    var Handlebars = require('handlebars');
+    var fs = require('fs');
+    var DoLoop = require('doloop');
+    var cacheBuste = '12_22_16_';
+    DoLoop()
+    .loop( function( filename, data ) {
+      if ( filename === "main.js" ) {
+        fs.rename(filename, cacheBuste + '.js' );
+      }
+    });
+
 
 # API
 
@@ -45,6 +62,13 @@ create it anonymously. Optionally, you can pass one argument that will set the d
 
 From there you'll get to doing stuff by chaining methods on this object.  The two most important
 methods are `loop()` and `build()`, read about those below.
+
+## Properties
+### DoLoop._directory
+This is a String value of the current directory that DoLoop is working in.
+
+### DoLoop._files
+This is an array of filenames that gets built up during a loop() method.
 
 ## Methods
 Every method returns the DoLoop object to allow for chaining methods.
