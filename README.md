@@ -36,19 +36,6 @@ For instance, you can choose to do certain things to files if they match a filen
       }
     });
 
-Or maybe you want to use Handlebars to automate your cache busting (you'll need these
-packages installed to use them).
-
-    var Handlebars = require('handlebars');
-    var fs = require('fs');
-    var DoLoop = require('doloop');
-    var cacheBuste = '12_22_16_';
-    DoLoop()
-    .loop( function( filename, data ) {
-      if ( filename === "main.js" ) {
-        fs.rename(filename, cacheBuste + '.js' );
-      }
-    });
 
 
 # API
