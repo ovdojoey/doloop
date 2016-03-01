@@ -15,10 +15,10 @@ require('doloop') at the top.
 ## Your First Loop
 Looping is really easy, take a look at this basic example:
 
-    var myLoop = DoLoop()
-     .loop( function( filename, data ){
+    DoLoop()
+    .loop( function( filename, data ){
        console.log( filename );
-     });
+    });
 
 In the above example we are simply looping over all the files in the current directory and using
 console.log to print the name of each file.  
@@ -28,13 +28,20 @@ For instance, you can choose to do certain things to files if they match a filen
 
     var fs = require('fs');
     var DoLoop = require('doloop');
-    var cacheBuste = '12_22_16_';
     DoLoop()
     .loop( function( filename, data ) {
       if ( filename === "main.js" ) {
         // do something with the file: this.directory + "/" + filename
       }
     });
+
+
+## Use Cases
+Concatenate scripts or strings
+Image processing on a folder of images
+To precompile templates into compiled HTML using Handlebars
+As a static blog generator
+To transform markdown files into HTML
 
 
 
