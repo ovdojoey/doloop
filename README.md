@@ -20,7 +20,7 @@ Looping is really easy, take a look at this basic example:
        console.log( filename );
     });
 
-In the above example we are simply looping over all the files in the current directory and using
+In the above example we are simply looping over all the files in the default directory (whereever doloop is installed) and using
 console.log to print the name of each file.  
 
 You can do anything you want within the loop.  
@@ -37,6 +37,10 @@ For instance, you can choose to do certain things to files if they match a filen
 
 
 ## Use Cases
+*doloop* can be a useful tool in your build flow that helps speed up tackling repetitive tasks.
+However, by itself doloop cannot do much.  It's usefulness comes from how you hook
+into the loops and transform the files it provides.
+
 - Concatenate scripts or strings
 - Image processing on a folder of images
 - To precompile templates into compiled HTML using Handlebars
@@ -114,7 +118,18 @@ method which is only fired after the preceding loop has finished.
 - callback <Function> [required] the function to execute after the preceding loop has completed
 
 The callback function is called after the loop is finished. It is not passed any
-arguments.
+arguments.  The build method is a place to perform tasks after the loop has finished.
+
+    var concat = "";
+    DoLoop('scripts/')
+    .readEncoding('utf8')
+    .loop('.js+$' function(filename, data) {
+      concat += data;
+    })
+    .done(function(){
+      console.log(concat); // prints the data created during the loop  
+    });
+
 
 ### done ( callback )
 An alias of the build method.
