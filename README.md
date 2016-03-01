@@ -73,7 +73,7 @@ property is useful when used within a done() callback function. With it, you can
 see the files that were looped through.
 
 ## Methods
-You can chain methods, for example `cd(path).readEncoding('utft8').loop(callback)` but
+You can chain methods, for example `cd(path).readEncoding('utf8').loop(callback)` but
 you can not chain more than one loop.  To create several loops
 simply create multiple DoLoop constructors.
 
