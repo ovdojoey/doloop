@@ -12,8 +12,8 @@ Install doloop using `npm install doloop`.
 ## Your First Loop
 Looping is really easy, take a look at this basic example:
 
-    var doloop = DoLoop()
-     .loop(function(files){
+    var myLoop = DoLoop()
+     .loop(function(filename, data){
        console.log(files);
      });
 
@@ -21,4 +21,22 @@ Here we are simply looping over all the files in the current directory and we ar
 console.log to print the array of file names.
 
 ## Methods
+Every method returns the DoLoop object to allow for chaining.
+
+### cd ( path )
+An alias of changeDirectory.
+
 ### changeDirectory( path )
+Changes the directory relative to the path provided.
+
+### readEncoding ( encoding )
+Changes the encoding used by Node's fs.readFile function.
+If no encoding is specified (null), then the raw buffer is returned.  Use 'utf8'
+to return a utf8 string of the file contents.
+
+### loop([regEx], callback)
+-regEx <String> is an optional regular expression string that can be used to match certain filenames.
+-callback <Function> is the function to execute on each file looped through.
+
+The callback function is passed two arguments `(filename, data)`, where `data` is
+a raw buffer of the file contents (unless modified, for example using `readEncoding('utf8')`).
