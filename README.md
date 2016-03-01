@@ -7,18 +7,34 @@ can be used as a full on build tool, or a simple tool to make your life easier.
 ## Getting Started
 DoLoop requires Node and NPM to be installed.
 
-Install doloop using `npm install doloop`.
+Install doloop using `npm install doloop`.  Then create a blank JS file and
+require('doloop') at the top.
+
+    var DoLoop = require('doloop');
 
 ## Your First Loop
 Looping is really easy, take a look at this basic example:
 
     var myLoop = DoLoop()
-     .loop(function(filename, data){
-       console.log(filename);
+     .loop( function( filename, data ){
+       console.log( filename );
      });
 
 Here we are simply looping over all the files in the current directory and we are using
-console.log to print the name of each file.
+console.log to print the name of each file.  You can choose to do certain things to files if they match
+a filename:
+
+    var fs = require('fs');
+    var DoLoop = require('doloop');
+    var version = '0.11';
+    DoLoop()
+    .loop( function( filename, data ) {
+      if ( filename === "main.js" ) {
+        fs.rename(filename, filename + "?v=" + version );
+      }
+    });
+
+# API
 
 ## The DoLoop constructor
 You need to create a new DoLoop object to kick everything off.  You can store it as a variable or
@@ -34,7 +50,7 @@ methods are `loop()` and `build()`, read about those below.
 Every method returns the DoLoop object to allow for chaining methods.
 
 ### cd ( path )
-An alias of changeDirectory.
+An alias of the changeDirectory method.
 
 ### changeDirectory ( path )
 
@@ -79,4 +95,4 @@ The callback function is called after the loop is finished. It is not passed any
 arguments.
 
 ### done ( callback )
-An alias of build.
+An alias of the build method.
