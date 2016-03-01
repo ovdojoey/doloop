@@ -68,10 +68,14 @@ methods are `loop()` and `build()`, read about those below.
 This is a String value of the current directory that DoLoop is working in.
 
 ### DoLoop._files
-This is an array of filenames that gets built up during a loop() method.
+This is an array of filenames that gets built up during the loop() method. This
+property is useful when used within a done() callback function. With it, you can
+see the files that were looped through.
 
 ## Methods
-Every method returns the DoLoop object to allow for chaining methods.
+You can chain methods, for example `cd(path).readEncoding('utft8').loop(callback)` but
+you can not chain more than one loop.  To create several loops
+simply create multiple DoLoop constructors.
 
 ### cd ( path )
 An alias of the changeDirectory method.
