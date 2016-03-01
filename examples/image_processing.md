@@ -17,13 +17,13 @@ each image and get it ready for your website.  Especially if the images are name
       .dest('/examples/images/compressed')
       .use(Imagemin.jpegtran({progressive : true}))
       run();
-      
+
       buildImageLoop += "<li><img src=/examples/images/compressed/"+filename+"></li>";
 
     })
     .build(function(){
-
-      // you could opt to write the create data to a file
+      buildImageLoop = '<ul>' + buildImageLoop + '</ul>';
+      // you could opt to write the collection of images to a file
       fs.writeFile('image-collection.html', buildImageLoop, function (err) {
         if (err) return console.log(err);
         console.log('File wrote');
