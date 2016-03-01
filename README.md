@@ -32,7 +32,7 @@ For instance, you can choose to do certain things to files if they match a filen
     DoLoop()
     .loop( function( filename, data ) {
       if ( filename === "main.js" ) {
-        // do something with the file: `this._directory + "/" + filename`
+        // do something with the file: this.directory + "/" + filename
       }
     });
 
@@ -51,10 +51,10 @@ From there you'll get to doing stuff by chaining methods on this object.  The tw
 methods are `loop()` and `build()`, read about those below.
 
 ## Properties
-### DoLoop._directory
+### DoLoop.directory
 This is a String value of the current directory that DoLoop is working in.
 
-### DoLoop._files
+### DoLoop.files
 This is an array of filenames that gets built up during the loop() method. This
 property is useful when used within a done() callback function. With it, you can
 see the files that were looped through.
