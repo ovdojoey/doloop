@@ -5,7 +5,7 @@ loop through all the files and perform any number of transforms on the files.  I
 can be used as a full on build tool, or a simple tool to make your life easier.
 
 ## Getting Started
-DoLoop requires Node and NPM installed, grab them at (https://nodejs.org/)[NodeJS].
+DoLoop requires Node and NPM to be installed.
 
 Install doloop using `npm install doloop`.
 
