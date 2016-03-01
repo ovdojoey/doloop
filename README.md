@@ -37,11 +37,11 @@ For instance, you can choose to do certain things to files if they match a filen
 
 
 ## Use Cases
-Concatenate scripts or strings
-Image processing on a folder of images
-To precompile templates into compiled HTML using Handlebars
-As a static blog generator
-To transform markdown files into HTML
+- Concatenate scripts or strings
+- Image processing on a folder of images
+- To precompile templates into compiled HTML using Handlebars
+- As a static blog generator
+- To transform markdown files into HTML
 
 
 
