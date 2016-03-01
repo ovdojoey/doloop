@@ -10,8 +10,6 @@ var doloop = DoLoop()
       // fs.rename(file, 'test2.js');
     }
     buildStream = buildStream + data;
-    // console.log(filename);
-    // console.log(data);
   })
   .build(function(){
     console.log(buildStream);
