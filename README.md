@@ -38,13 +38,13 @@ For instance, you can choose to do certain things to files if they match a filen
     });
 
 
-## Use Cases
+## Uses / Examples
 *doloop* can be a useful tool in your build flow that helps speed up tackling repetitive tasks.
 However, by itself doloop cannot do much.  It's usefulness comes from how you hook
 into the loops and transform the files it provides.
 
 - [Concatenate scripts or strings](/examples/concat.md)
-- Image processing on a folder of images
+- [Image processing on a folder of images](/examples/image_processing.md)
 - To precompile templates into compiled HTML using Handlebars
 - As a static blog generator
 - To transform markdown files into HTML
