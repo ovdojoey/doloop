@@ -2,7 +2,8 @@
 
 doloop is a small module for working with files in a directory.  It allows you to
 loop through all the files and perform any number of transforms on the files.  It
-can be used as a full on build tool, or a simple tool to make your life easier.
+can be used as a full on build tool, or a simple tool to make your life easier when
+working with a lot of files.
 
 ## Getting Started
 DoLoop requires Node and NPM to be installed.
@@ -20,7 +21,7 @@ Looping is really easy, take a look at this basic example:
        console.log( filename );
     });
 
-In the above example we are simply looping over all the files in the default directory (whereever doloop is installed) and using
+In the above example we are simply looping over all the files in the default directory (the folder you ran 'npm install doloop' in) and using
 console.log to print the name of each file.  
 
 You can do anything you want within the loop.  
@@ -29,6 +30,7 @@ For instance, you can choose to do certain things to files if they match a filen
     var fs = require('fs');
     var DoLoop = require('doloop');
     DoLoop()
+    .cd('scripts/')
     .loop( function( filename, data ) {
       if ( filename === "main.js" ) {
         // do something with the file: this.directory + "/" + filename
@@ -41,12 +43,11 @@ For instance, you can choose to do certain things to files if they match a filen
 However, by itself doloop cannot do much.  It's usefulness comes from how you hook
 into the loops and transform the files it provides.
 
-- Concatenate scripts or strings
+- [Concatenate scripts or strings](/examples/concat.md)
 - Image processing on a folder of images
 - To precompile templates into compiled HTML using Handlebars
 - As a static blog generator
 - To transform markdown files into HTML
-
 
 
 # API
