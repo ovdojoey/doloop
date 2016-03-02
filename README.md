@@ -90,7 +90,7 @@ Changes the directory relative to the path provided.
 - encoding <String> [required] the encoding to use (for example: 'utf8')
 
 Changes the encoding used by Node's fs.readFile function.
-If no encoding is specified (null), then the raw buffer is returned.  Use 'utf8'
+If a null encoding is specified, then the raw buffer is returned.  Use 'utf8'
 to return a utf8 string of the file contents.
 
 ### loop ( [regEx], callback )
