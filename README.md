@@ -1,6 +1,6 @@
 # doloop
 
-doloop is a small module for working with files in a directory.  It allows you to
+doloop is a small tool for working with files in a directory.  It allows you to
 loop through all the files and perform any number of transforms on the files.  It
 can be used as a full on build tool, or a simple tool to make your life easier when
 working with a lot of files.
