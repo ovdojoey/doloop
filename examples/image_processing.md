@@ -12,11 +12,12 @@ each image and get it ready for your website.  Especially if the images are name
     .readEncoding('utf8')
     .loop('.jpg', function(filename, data){
 
+      // this process is happening asynchronously
       new Imagemin()
-      .src('/examples/images/' + filename)
-      .dest('/examples/images/compressed')
+      .src('src/img/' + filename)
+      .dest('examples/images/compressed')
       .use(Imagemin.jpegtran({progressive : true}))
-      run();
+      .run();
 
       buildImageLoop += "<li><img src=/examples/images/compressed/"+filename+"></li>";
 

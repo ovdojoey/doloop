@@ -3,7 +3,7 @@ var fs = require('fs');
 
 var buildStream = '';
 var doloop = DoLoop()
-  .cd('examples/concat')
+  .cd('/joeylea/doloop/examples/concat')
   .readEncoding('utf8')
   .loop('.js+$', function(filename, data){ //.js+$
     if ( filename === 'test.js' ) {
