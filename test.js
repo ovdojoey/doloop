@@ -2,8 +2,8 @@ var DoLoop = require('./index.js');
 var fs = require('fs');
 
 var buildStream = '';
-var doloop = DoLoop()
-  .cd('/joeylea/doloop/examples/concat')
+var doloop = DoLoop('/joeylea/doloop/examples/concat')
+  // .cd('')
   .readEncoding('utf8')
   .loop('.js+$', function(filename, data){ //.js+$
     if ( filename === 'test.js' ) {
