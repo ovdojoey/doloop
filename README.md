@@ -21,7 +21,7 @@ Looping is really easy, take a look at this basic example:
        console.log( filename );
     });
 
-In the above example we are simply looping over all the files in the default directory (the folder you ran 'npm install doloop' in) and using
+In the above example we are simply looping over all the files in the default directory (the folder you ran `npm install doloop` in) and using
 console.log to print the name of each file.  
 
 You can do anything you want within the loop.  
@@ -104,7 +104,7 @@ a raw buffer of the file contents (unless modified, for example using `readEncod
     var concat = "";
     DoLoop('scripts/')
     .readEncoding('utf8')
-    .loop('.js+$' function(filename, data) {
+    .loop('.js+$', function(filename, data) {
       concat += data;
     });
 
