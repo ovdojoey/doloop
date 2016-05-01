@@ -1,6 +1,6 @@
 {
   "name": "doloop",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "A small module that loops through files and does things to/with the files",
   "main": "index.js",
   "scripts": {
